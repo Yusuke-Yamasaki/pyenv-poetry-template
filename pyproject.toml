@@ -4,7 +4,7 @@ version = "0.1.0"
 description = ""
 authors = ["Yusuke-Yamasaki <yamasaki@hal.ipc.i.u-tokyo.ac.jp>"]
 readme = "README.md"
-packages = [{include = "python_project_template"}]
+packages = []
 
 [tool.poetry.dependencies]
 python = "^3.9"
