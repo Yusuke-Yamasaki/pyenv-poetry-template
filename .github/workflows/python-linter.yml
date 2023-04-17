@@ -7,10 +7,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Setup Python environment
-      - uses: actions/setup-python@v3
+        uses: actions/setup-python@v3
         with:
           python-version: 3.9
-          cache: poetry
       - name: Install poetry
         run: pip install poetry
       
@@ -18,8 +17,8 @@ jobs:
         run: poetry install
 
       - name: Lint with pysen
-        run: poetry run pysen lint
+        run: poetry run pysen run lint
       
       - name: Test with pytest
-      - run: poetry run pytest
+        run: poetry run pytest
 
