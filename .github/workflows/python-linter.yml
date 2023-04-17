@@ -1,0 +1,25 @@
+name: python-linter
+
+on: [pull_request]
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Python environment
+      - uses: actions/setup-python@v3
+        with:
+          python-version: 3.9
+          cache: poetry
+      - name: Install poetry
+        run: pip install poetry
+      
+      - name: Install dependencies
+        run: poetry install
+
+      - name: Lint with pysen
+        run: poetry run pysen lint
+      
+      - name: Test with pytest
+      - run: poetry run pytest
+
