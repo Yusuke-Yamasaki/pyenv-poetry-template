@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "python-project-template"
+version = "0.1.0"
+description = ""
+authors = ["Yusuke-Yamasaki <yamasaki@hal.ipc.i.u-tokyo.ac.jp>"]
+readme = "README.md"
+packages = [{include = "python_project_template"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+isort = "^5.12.0"
+black = "^23.3.0"
+mypy = "^1.2.0"
+pysen = "^0.10.4"
+pytest = "^7.3.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pysen]
+version = "0.10"
+
+[tool.pysen.lint]
+enable_black = true
+enable_isort = true
+enable_mypy = true
+py_version = "py39"
+[[tool.pysen.lint.mypy_targets]]
+paths = ["."]
